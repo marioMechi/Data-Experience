@@ -100,4 +100,8 @@ select Pname, quantity from (product left outer join productStorage on idProduct
 where quantity >1;
 -- relação nomes dos fornecedores e nomes dos produtos
 select Pname, socialName from (product left outer join productStorage on idProduct = idStorage
-				inner join suplier on idProduct = idSuplier);
+				inner join suplier on idProduct = idSuplier)
+order by Pname;
+select Pname, socialName from (product left outer join productStorage on idProduct = idStorage
+				inner join suplier on idProduct = idSuplier)
+having  count(*) >1;
